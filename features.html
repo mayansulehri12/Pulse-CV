@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Pulse CV</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="bg-glow">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+        <div class="interactive-shape shape-d"></div>
+        <div class="interactive-shape shape-e"></div>
+        <div class="interactive-shape shape-f"></div>
+    </div>
+
+    <header
+        style="padding: 20px 0; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50;">
+        <div class="container"
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div class="brand gradient-text" style="font-size: 2.5rem; font-weight: 800; cursor: pointer;"
+                onclick="location.href='index.html'">Pulse CV</div>
+            <nav style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+                <a href="index.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Home</a>
+                <a href="features.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Features</a>
+                <a href="templates.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Templates</a>
+                <a href="pricing.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Pricing</a>
+                <a href="help.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Help Center</a>
+                <a href="contact.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container" style="padding: 60px 20px; min-height: 80vh;">
+        <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 20px;">Features</h1>
+        <p style="font-size: 1.2rem; color: var(--text-dim); margin-bottom: 40px;">Everything you need to build the
+            perfect resume.</p>
+
+        <div class="glass features-grid" style="grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div class="feature-card">
+                <i data-lucide="brain-circuit"></i>
+                <h3>Smart Data Extraction</h3>
+                <p>Upload your old CV and let our system parse your data instantly with high accuracy.</p>
+            </div>
+            <div class="feature-card">
+                <i data-lucide="layout"></i>
+                <h3>ATS-Friendly Templates</h3>
+                <p>Clean, professional designs that pass through Applicant Tracking Systems.</p>
+            </div>
+            <div class="feature-card">
+                <i data-lucide="zap"></i>
+                <h3>Real-time Preview</h3>
+                <p>See exactly how your resume looks as you type, with zero lag.</p>
+            </div>
+            <div class="feature-card">
+                <i data-lucide="shield-check"></i>
+                <h3>Privacy First</h3>
+                <p>Your data stays on your device. We don't store your personal information.</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn btn-outline"
+            style="margin-top: 40px; display: inline-flex; align-items: center; gap: 8px;">
+            <i data-lucide="arrow-left"></i> Back to Home
+        </a>
+    </div>
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="brand gradient-text" style="font-size: 1.2rem; margin-bottom: 8px;">Pulse CV</div>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Simplifying careers with smart resume
+                    building. Build, edit, and export your professional journey in minutes.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="templates.html">Templates</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="help.html">Help Center</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developers</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">Developed by: <br>
+                        <a href="https://www.facebook.com/mayansulehri12" target="_blank"
+                            style="color: var(--primary); text-decoration: none;">M. Ayan Sulehri</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Pulse CV. All rights reserved. Built with ❤️ for professionals.</p>
+            </div>
+        </div>
+    </footer>
+    <script>lucide.createIcons();</script>
+    <script src="js/effects.js" defer></script>
+</body>
+
+</html>

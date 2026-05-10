@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse CV| Zero-Entry Resume Building</title>
+    <meta name="description" content="Advanced resume extraction and building.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="bg-glow">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+        <div class="interactive-shape shape-a"></div>
+        <div class="interactive-shape shape-b"></div>
+        <div class="interactive-shape shape-c"></div>
+    </div>
+
+    <header
+        style="padding: 20px 0; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50;">
+        <div class="container"
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div class="brand gradient-text" style="font-size: 2.5rem; font-weight: 800; cursor: pointer;"
+                onclick="location.href='index.html'">Pulse CV</div>
+            <nav style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+                <a href="index.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Home</a>
+                <a href="features.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Features</a>
+                <a href="templates.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Templates</a>
+                <a href="pricing.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Pricing</a>
+                <a href="help.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Help Center</a>
+                <a href="contact.html"
+                    style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- LANDING VIEW -->
+    <section id="landing-view" class="view">
+        <div class="container">
+            <div class="hero">
+                <h1 class="gradient-text">Build Your Future <br>With Pulse CV</h1>
+                <p>Advanced resume extraction that transforms your raw data into professional, ATS-optimized CVs in
+                    seconds. No manual entry, just results.</p>
+
+                <div style="margin-top: 48px;">
+                    <button class="btn btn-primary btn-lg" onclick="startApp()">
+                        <i data-lucide="zap"></i> <span>Get Started Now</span>
+                    </button>
+                    <div style="margin-top: 24px; color: var(--text-dim); font-size: 0.9rem;">
+                        <i data-lucide="check-circle"
+                            style="width: 16px; height: 16px; vertical-align: middle; margin-right: 8px; color: var(--success);"></i>
+                        Trusted by 50,000+ professionals worldwide
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass features-grid">
+                <div class="feature-card">
+                    <i data-lucide="brain-circuit"></i>
+                    <h3>Smart Extraction</h3>
+                    <p>Smart parsing of your existing documents with 99% accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <i data-lucide="layout"></i>
+                    <h3>Pro Templates</h3>
+                    <p>Designer-crafted layouts that bypass ATS filters effortlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <i data-lucide="shield-check"></i>
+                    <h3>Privacy First</h3>
+                    <p>Your data is processed locally and never stored on our servers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DASHBOARD VIEW -->
+    <section id="dashboard-view" class="view hidden">
+        <div class="dashboard-container">
+            <aside class="glass sidebar">
+                <div class="brand gradient-text">Pulse CV</div>
+                <nav class="nav-menu">
+                    <div class="nav-item" data-tab="profile" onclick="switchTab('profile')">
+                        <i data-lucide="user"></i> <span>Profile</span>
+                    </div>
+                    <div class="nav-item" data-tab="personal" onclick="switchTab('personal')">
+                        <i data-lucide="calendar"></i> <span>Age & Birth</span>
+                    </div>
+                    <div class="nav-item" data-tab="experience" onclick="switchTab('experience')">
+                        <i data-lucide="briefcase"></i> <span>Experience</span>
+                    </div>
+                    <div class="nav-item" data-tab="education" onclick="switchTab('education')">
+                        <i data-lucide="graduation-cap"></i> <span>Education</span>
+                    </div>
+
+                    <div class="nav-item" data-tab="skills" onclick="switchTab('skills')">
+                        <i data-lucide="code"></i> <span>Skills</span>
+                    </div>
+                    <div class="nav-item" data-tab="languages" onclick="switchTab('languages')">
+                        <i data-lucide="languages"></i> <span>Languages</span>
+                    </div>
+                    <div class="nav-item" data-tab="certifications" onclick="switchTab('certifications')">
+                        <i data-lucide="award"></i> <span>Certifications</span>
+                    </div>
+                    <div class="nav-item" data-tab="preview" onclick="switchTab('preview')">
+                        <i data-lucide="eye"></i> <span>Live Preview</span>
+                    </div>
+                </nav>
+                <div style="margin-top: auto;">
+                    <button class="btn btn-outline" style="width: 100%; margin-bottom: 12px;" onclick="resetApp()">
+                        <i data-lucide="log-out"></i> <span>Reset App</span>
+                    </button>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="exportPDF()">
+                        <i data-lucide="download"></i> <span>Export PDF</span>
+                    </button>
+                </div>
+            </aside>
+
+            <main class="glass preview-main">
+                <div class="pane-header">
+                    <h3 style="font-size: 1.1rem; font-weight: 700;">Resume Preview</h3>
+                    <span style="font-size: 0.75rem; color: var(--text-dim);">Real-time Sync Active</span>
+                </div>
+                <div class="doc-wrapper">
+                    <div class="resume-paper" id="resume-preview">
+                        <!-- Rendered via JS -->
+                    </div>
+                </div>
+            </main>
+
+            <section class="glass edit-panel">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
+                    <h2 id="panel-title" style="font-size: 1.5rem; font-weight: 800;">Review Data</h2>
+                    <i data-lucide="check-circle-2" style="color: var(--success); width: 24px;"></i>
+                </div>
+
+                <div class="panel-content" id="panel-content">
+                    <!-- Form fields rendered via JS -->
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <footer class="glass-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="brand gradient-text" style="font-size: 1.2rem; margin-bottom: 8px;">Pulse CV</div>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Simplifying careers with smart resume
+                    building. Build, edit, and export your professional journey in minutes.</p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="templates.html">Templates</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="help.html">Help Center</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Developers</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-dim);">Developed by: <br>
+                        <a href="https://www.facebook.com/mayansulehri12" target="_blank"
+                            style="color: var(--primary); text-decoration: none;">M. Ayan Sulehri</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Pulse CV. All rights reserved. Built with ❤️ for professionals.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Core App JS -->
+    <script src="js/app.js" defer></script>
+    <script src="js/effects.js" defer></script>
+</body>
+
+</html>
