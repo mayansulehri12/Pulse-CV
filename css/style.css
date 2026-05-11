@@ -657,10 +657,102 @@ body > .container {
     }
 }
 
-/* Responsive */
+/* =====================
+   HAMBURGER MENU STYLES
+   ===================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    gap: 5px;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.hamburger:hover { background: rgba(255,255,255,0.1); }
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav overlay */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(16px);
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-nav-overlay.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-nav-overlay a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    transition: color 0.2s;
+    text-align: center;
+}
+
+.mobile-nav-overlay a:hover { color: var(--primary-light); }
+
+.mobile-nav-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.4rem;
+    transition: background 0.2s;
+}
+
+.mobile-nav-close:hover { background: rgba(255,255,255,0.2); }
+
+/* =====================
+   RESPONSIVE BREAKPOINTS
+   ===================== */
+
+/* Large desktop adjustments */
 @media (max-width: 1200px) {
     .dashboard-container {
-        grid-template-columns: 80px 1fr 400px;
+        grid-template-columns: 80px 1fr 380px;
     }
 
     .nav-item span {
@@ -670,17 +762,179 @@ body > .container {
     .nav-item svg {
         margin: 0 auto;
     }
+
+    .footer-content {
+        gap: 48px;
+    }
 }
 
-@media (max-width: 900px) {
-    .dashboard-container {
+/* Tablet / small laptop */
+@media (max-width: 1024px) {
+    .footer-content {
         grid-template-columns: 1fr;
-        height: auto;
+        gap: 40px;
     }
 
-    .sidebar {
-        display: none;
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
     }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        padding: 32px;
+        gap: 24px;
+    }
+
+    .dashboard-container {
+        grid-template-columns: 80px 1fr 340px;
+    }
+}
+
+/* Tablet portrait */
+@media (max-width: 900px) {
+    .hamburger { display: flex; }
+
+    /* Hide desktop nav */
+    header nav { display: none !important; }
+
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        height: auto;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .sidebar { display: none; }
+
+    /* Dashboard mobile bottom tab bar */
+    .dashboard-container .edit-panel {
+        order: 3;
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+
+    .dashboard-container .preview-main {
+        min-height: 50vh;
+    }
+}
+
+/* Mobile landscape / large phone */
+@media (max-width: 768px) {
+    .container { padding: 0 16px; }
+
+    #landing-view {
+        padding: 80px 0 48px;
+    }
+
+    .hero {
+        margin-bottom: 48px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 10vw, 3.5rem);
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-lg {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 20px;
+    }
+
+    /* Force 2-col features on medium mobiles if space allows */
+    @supports (width: min(240px, 100%)) {
+        .features-grid {
+            grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+        }
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .glass-footer {
+        padding: 48px 0 32px;
+        margin-top: 48px;
+    }
+
+    .edit-panel { padding: 20px; }
+
+    .glass-footer .container { padding: 0 20px; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .container { padding: 0 14px; }
+
+    header > div { gap: 10px; }
+
+    .brand { font-size: 1.8rem !important; }
+
+    #landing-view {
+        padding: 64px 0 40px;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.75rem, 9vw, 2.5rem);
+    }
+
+    .hero p { font-size: 0.95rem; }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        padding: 20px 16px;
+        gap: 16px;
+        margin-top: 24px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .footer-col { text-align: center; }
+
+    .glass-footer { padding: 40px 0 24px; margin-top: 32px; }
+
+    .footer-bottom { padding-top: 24px; font-size: 0.8rem; }
+
+    .dashboard-container {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .edit-panel { padding: 16px; }
+
+    .btn { padding: 12px 20px; font-size: 0.95rem; }
+
+    /* Page headings (features, pricing, etc.) */
+    h1.gradient-text { font-size: clamp(1.75rem, 8vw, 2.5rem) !important; }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .brand { font-size: 1.5rem !important; }
+
+    .hero h1 { font-size: 1.6rem; }
+
+    .btn-lg { padding: 12px 20px; font-size: 0.9rem; }
+
+    .features-grid { padding: 14px 12px; }
 }
 
 /* Print Styles */

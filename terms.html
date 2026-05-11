@@ -21,10 +21,21 @@
         <div class="interactive-shape shape-f"></div>
     </div>
 
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&#x2715;</button>
+        <a href="index.html" onclick="closeMobileNav()">Home</a>
+        <a href="features.html" onclick="closeMobileNav()">Features</a>
+        <a href="templates.html" onclick="closeMobileNav()">Templates</a>
+        <a href="pricing.html" onclick="closeMobileNav()">Pricing</a>
+        <a href="help.html" onclick="closeMobileNav()">Help Center</a>
+        <a href="contact.html" onclick="closeMobileNav()">Contact Us</a>
+    </div>
+
     <header
         style="padding: 20px 0; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50;">
         <div class="container"
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            style="display: flex; justify-content: space-between; align-items: center; gap: 16px;">
             <div class="brand gradient-text" style="font-size: 2.5rem; font-weight: 800; cursor: pointer;"
                 onclick="location.href='index.html'">Pulse CV</div>
             <nav style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
@@ -47,6 +58,9 @@
                     style="color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 500; transition: color 0.2s;"
                     onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#fff'">Contact Us</a>
             </nav>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" onclick="toggleMobileNav()">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
     <div class="container" style="padding: 60px 20px; min-height: 80vh;">
@@ -122,6 +136,27 @@
     </footer>
     <script>lucide.createIcons();</script>
     <script src="js/effects.js" defer></script>
+    <script>
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobileNav');
+            const btn = document.getElementById('hamburgerBtn');
+            const isOpen = nav.style.display === 'flex';
+            if (isOpen) {
+                nav.classList.remove('visible'); btn.classList.remove('open');
+                setTimeout(() => { nav.style.display = 'none'; }, 300);
+            } else {
+                nav.style.display = 'flex'; btn.classList.add('open');
+                requestAnimationFrame(() => nav.classList.add('visible'));
+            }
+        }
+        function closeMobileNav() {
+            const nav = document.getElementById('mobileNav');
+            const btn = document.getElementById('hamburgerBtn');
+            nav.classList.remove('visible'); btn.classList.remove('open');
+            setTimeout(() => { nav.style.display = 'none'; }, 300);
+        }
+        document.getElementById('mobileNavClose').addEventListener('click', closeMobileNav);
+    </script>
 </body>
 
 </html>
